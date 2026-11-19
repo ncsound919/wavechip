@@ -1,0 +1,276 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Orbitron", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #060916;
+    color: #e2e8f0;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070b18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2d52;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2dd4bf;
+}
+
+/* 80s Brick Wall Lining */
+.retro-brick-wall {
+  background-color: #050814;
+  background-image:
+    linear-gradient(180deg, rgba(45, 212, 191, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 140, 179, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+  background-size: 64px 28px, 64px 56px, 64px 56px;
+  background-position: 0 0, 0 0, 32px 28px;
+}
+
+/* Floating 80s Geometric Symbols Layer */
+.retro-symbols-layer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke-width='1.5'%3E%3Cpolygon points='26,18 38,38 14,38' stroke='%232dd4bf' stroke-opacity='0.18'/%3E%3Ccircle cx='135' cy='32' r='8' stroke='%23d98cb3' stroke-opacity='0.2'/%3E%3Cpath d='M 68 88 Q 76 76 84 88 T 100 88 T 116 88' stroke='%2339ff14' stroke-opacity='0.16'/%3E%3Cpath d='M 24 132 L 36 144 M 36 132 L 24 144' stroke='%23d98cb3' stroke-opacity='0.18'/%3E%3Crect x='132' y='124' width='14' height='14' transform='rotate(24 139 131)' stroke='%232dd4bf' stroke-opacity='0.17'/%3E%3Cpath d='M 86 22 L 94 22 L 94 30 L 102 30' stroke='%2339ff14' stroke-opacity='0.15'/%3E%3Ccircle cx='50' cy='158' r='4' stroke='%232dd4bf' stroke-opacity='0.18'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Brick-lined outer chassis bezel */
+.brick-chassis-rim {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(45, 212, 191, 0.22) 0px,
+      rgba(45, 212, 191, 0.22) 22px,
+      rgba(7, 11, 24, 0.96) 22px,
+      rgba(7, 11, 24, 0.96) 24px
+    );
+}
+
+/* Brushed dark cobalt rack ear texture */
+.rack-ear-metal {
+  background: linear-gradient(90deg, #060c1f 0%, #0d193a 50%, #060c1f 100%);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.025) 0px,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    linear-gradient(90deg, #060c1f 0%, #0f1d42 50%, #060c1f 100%);
+}
+
+/* Old-school brushed anodized blue metal grain + beveled module card */
+.oldschool-panel {
+  background-color: #091024;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 0),
+    linear-gradient(180deg, rgba(30, 52, 108, 0.34) 0%, rgba(5, 9, 22, 0.72) 100%);
+  background-size: 4px 4px, 100% 100%;
+  box-shadow:
+    inset 0 1px 0 rgba(148, 197, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.65),
+    0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.hw-card-header {
+  background: linear-gradient(180deg, #111c3f 0%, #0b132d 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    0 1px 0 rgba(0, 0, 0, 0.55);
+}
+
+.hw-subcard {
+  background: linear-gradient(180deg, rgba(11, 20, 48, 0.85) 0%, rgba(5, 9, 22, 0.94) 100%);
+  border: 1px solid #1d3163;
+  box-shadow:
+    inset 0 1px 0 rgba(125, 211, 252, 0.07),
+    inset 0 2px 8px rgba(0, 0, 0, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.hw-screw {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #4764a8 0%, #16244a 65%, #070c1b 100%);
+  box-shadow:
+    inset 0 0.5px 0.5px rgba(255, 255, 255, 0.25),
+    0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+/* Tactile beveled hardware push-button */
+.hw-btn {
+  background: linear-gradient(180deg, #111d42 0%, #080f24 100%);
+  border: 1px solid #243b73;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.65);
+  transition: transform 80ms ease, box-shadow 120ms ease, border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.hw-btn:hover:not(:disabled) {
+  background: linear-gradient(180deg, #172756 0%, #0c1634 100%);
+  border-color: #3657a6;
+}
+
+.hw-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 0 transparent;
+}
+
+.hw-btn-teal-on {
+  background: linear-gradient(180deg, rgba(45, 212, 191, 0.28) 0%, rgba(13, 66, 72, 0.35) 100%);
+  border: 1px solid rgba(94, 234, 212, 0.72);
+  color: #5eead4;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 0 12px rgba(45, 212, 191, 0.32),
+    0 2px 4px rgba(0, 0, 0, 0.65);
+}
+
+.hw-btn-mauve-on {
+  background: linear-gradient(180deg, rgba(217, 140, 179, 0.28) 0%, rgba(78, 34, 66, 0.38) 100%);
+  border: 1px solid rgba(242, 181, 212, 0.72);
+  color: #f2b5d4;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 0 12px rgba(217, 140, 179, 0.32),
+    0 2px 4px rgba(0, 0, 0, 0.65);
+}
+
+.hw-btn-neon-on {
+  background: linear-gradient(180deg, rgba(57, 255, 20, 0.24) 0%, rgba(18, 66, 22, 0.36) 100%);
+  border: 1px solid rgba(116, 255, 87, 0.75);
+  color: #74ff57;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 0 12px rgba(57, 255, 20, 0.32),
+    0 2px 4px rgba(0, 0, 0, 0.65);
+}
+
+.hw-select {
+  background: linear-gradient(180deg, #0b142d 0%, #050916 100%);
+  border: 1px solid #243b73;
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.85),
+    0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.hw-select:hover,
+.hw-select:focus {
+  border-color: #3b63bf;
+  outline: none;
+}
+
+/* CRT / VFD scanlines + specular glass reflection */
+.crt-scanlines {
+  background-image:
+    linear-gradient(rgba(4, 7, 18, 0.28) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.035) 1px, transparent 1px);
+  background-size: 100% 4px, 6px 6px;
+}
+
+.crt-glass-glare {
+  background: linear-gradient(
+    118deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 28%,
+    transparent 32%,
+    transparent 100%
+  );
+}
+
+/* VFD Digital Patch LCD with phosphor bloom */
+.vfd-lcd-screen {
+  background: linear-gradient(180deg, #061b24 0%, #04121a 100%);
+  box-shadow:
+    inset 0 2px 8px rgba(0, 0, 0, 0.92),
+    inset 0 0 24px rgba(45, 212, 191, 0.16),
+    0 0 18px rgba(45, 212, 191, 0.12);
+}
+
+/* Neon text & glow helpers */
+.glow-teal {
+  text-shadow: 0 0 10px rgba(45, 212, 191, 0.55);
+}
+
+.glow-mauve {
+  text-shadow: 0 0 10px rgba(217, 140, 179, 0.55);
+}
+
+.glow-neon {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.55);
+}
+
+@keyframes flowForward {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flowBackward {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 24;
+  }
+}
+
+@keyframes neonBreath {
+  0%, 100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-flow-right {
+  stroke-dasharray: 4 4;
+  animation: flowForward 0.9s linear infinite;
+}
+
+.animate-flow-left {
+  stroke-dasharray: 4 4;
+  animation: flowBackward 0.9s linear infinite;
+}
+
+.animate-neon-breath {
+  animation: neonBreath 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-flow-right,
+  .animate-flow-left,
+  .animate-neon-breath {
+    animation: none;
+  }
+}

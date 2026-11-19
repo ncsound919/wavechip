@@ -1,0 +1,15 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# native build trees and packaged sources
+native/build*/
+native/build_vst/
+native/build_tests*/
+native/build_tests2/
+*.zip
